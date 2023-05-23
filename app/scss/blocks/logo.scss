@@ -1,0 +1,52 @@
+.logo {
+    padding: 22px;
+
+    @include media($tablet) {
+        position: absolute;
+        top: 0;
+        left: 28px;
+    }
+
+    @include media($desktop) {
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.logo__icon-mobile {
+    color: $logo-color;
+    display: block;
+
+    @include media($tablet) {
+        display: none;
+    }
+
+    @include media($desktop) {
+        display: none;
+    }
+}
+
+.logo__icon-tablet {
+    display: none;
+
+    @include media($tablet) {
+        display: block;
+    }
+
+    @include media($desktop) {
+        display: none;
+    }
+}
+
+.logo__icon-desktop {
+    display: none;
+
+    @include media($tablet) {
+        display: none;
+    }
+
+    @include media($desktop) {
+        display: block;
+    }
+}

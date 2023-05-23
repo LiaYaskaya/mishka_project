@@ -1,0 +1,193 @@
+.nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $nav-bg;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow-y: auto;
+
+    @include media($tablet) {
+        position: static;
+        flex-grow: 1;
+        transform: translateX(0);
+        opacity: 1;
+        background-color: transparent;
+        pointer-events: auto;
+        overflow-y: visible;
+    }
+}
+
+.nav._active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+
+    @include media($tablet) {
+        display: grid;
+        grid-template-columns: auto 1fr 82px auto;
+        grid-template-rows: repeat(2, 90px);
+    }
+}
+
+.nav__item {
+    background-color: $nav-item-bg;
+    box-shadow: inset 0 -1px 0 $nav-shadow;
+
+    @include media($tablet) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+.nav__item:first-child {
+    box-shadow:
+        inset 0 1px 0 $nav-shadow,
+        inset 0 -1px 0 $nav-shadow;
+
+    @include media($tablet) {
+        box-shadow: none;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    @include media($desktop) {
+        grid-row: 1/2;
+        box-shadow: 1px 0 1px $nav-shadow;
+    }
+}
+
+.nav__item:nth-child(2) {
+    @include media($tablet) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    @include media($desktop) {
+        grid-row: 1/2;
+    }
+}
+
+.nav__item:nth-child(3) {
+    @include media($tablet) {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        box-shadow:
+            -1px 0 1px $nav-shadow,
+            1px 0 1px $nav-shadow;
+    }
+}
+
+.nav__item:nth-child(4) {
+    @include media($tablet) {
+        grid-column: 4/5;
+        grid-row: 1/2;
+    }
+}
+
+.nav__item:last-child {
+    @include media($tablet) {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+}
+
+.nav__link {
+    position: relative;
+    display: block;
+    padding: 27px;
+    padding-left: 76px;
+    color: $nav-link-color;
+    @include font(17px, 24px, 700);
+    text-decoration: none;
+    cursor: pointer;
+
+    @include media($tablet) {
+        font-size: 15px;
+        padding: 22px;
+    }
+
+    @include media($desktop) {
+        font-size: 17px;
+    }
+}
+
+.nav__item:first-child .nav__link,
+.nav__item:nth-child(2) .nav__link {
+    @include media($desktop) {
+        padding: 32px 35px;
+    }
+}
+
+.nav__item:nth-child(3) .nav__link {
+    @include media($tablet) {
+        padding: 35px 32px;
+    }
+}
+
+.nav__item:nth-child(4) .nav__link {
+    @include media($tablet) {
+        padding-top: 35px;
+        padding-right: 0;
+        padding-left: 31px;
+    }
+}
+
+.nav__item:nth-child(5) .nav__link,
+.nav__item:nth-child(6) .nav__link {
+    display: none;
+
+    @include media($desktop) {
+        display: block;
+        font-size: 15px;
+    }
+}
+
+.nav__item:last-child .nav__link {
+    display: none;
+
+    @include media($tablet) {
+        display: block;
+        font-weight: 400;
+        padding-left: 35px;
+        padding-right: 0;
+    }
+}
+
+.nav__link-cart {
+    @include media($tablet) {
+        font-size: 17px;
+        padding-left: 30px;
+    }
+}
+
+.nav__item-icon {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 18px;
+
+    @include media($tablet) {
+        position: static;
+        transform: translateY(0);
+    }
+}
+
+.nav__link-search {
+    @include media($tablet) {
+        display: none;
+    }
+}

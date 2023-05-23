@@ -1,0 +1,125 @@
+.header {
+    overflow: hidden;
+}
+
+.header__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    isolation: isolate;
+
+    // @include media($tablet) {
+    //     display: inline;
+    // }
+}
+
+.header__intro {
+    background: url("../img/hero_mobile.jpg") top center no-repeat;
+    background-position-y: -17px;
+    background-color: $header-intro-bg;
+    box-shadow: 0px -1px 0px $header-intro-shadow;
+
+    @include media($tablet) {
+        background: url("../img/hero_desktop.jpg") -90px 122px no-repeat;
+        background-color: $header-intro-bg;
+        margin-top: -90px;
+        padding-bottom: 122px;
+    }
+
+    @include media($desktop) {
+        background-position: top center;
+        padding-bottom: 0;
+    }
+}
+
+.header__slogan {
+    @include font(27px, 30px, 700);
+    text-align: center;
+    padding-top: 73px;
+    padding-bottom: 120px;
+
+    @include media($tablet) {
+        @include font(43px, 50px, 700);
+        max-width: 700px;
+        padding-top: 155px;
+        padding-bottom: 370px;
+    }
+
+    @include media($tablet) {
+        @include font(53px, 57px, 700);
+        padding-top: 157px;
+        padding-bottom: 355px;
+    }
+}
+
+.header__catalog-container {
+    @include media($tablet) {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        position: relative;
+    }
+}
+
+.header__catalog-container::before {
+    @include media($tablet) {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 24px;
+        background: url("../img/zigzag-fill-tablet.svg") no-repeat bottom center;
+    }
+}
+
+@media (min-width:829px) {
+    .header__catalog-container::before {
+        height: 34px;
+        background: url("../img/zigzag-fill-desktop.svg") no-repeat bottom center;
+    }
+}
+
+.header__catalog-list {
+    @include media($tablet) {
+        display: flex;
+    }
+}
+
+.header__catalog-item {
+    padding-top: 17px;
+    padding-bottom: 24px;
+    background-color: $header-catalog-item-bg;
+
+    @include media($tablet) {
+        flex-grow: 1;
+        padding-top: 24px;
+        padding-bottom: 33px;
+    }
+}
+
+.header__catalog-item:nth-child(2n) {
+    background-color: $header-catalog-item-2n-bg;
+}
+
+.header__catalog-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__catalog-name {
+    color: $header-catalog-name-color;
+    @include font(19px, 24px, 700);
+    max-width: 130px;
+
+    @include media($tablet) {
+        @include font(20px, 30px, 700);
+    }
+}
+
+.header__catalog-icon {
+    color: rgba($header-catalog-icon-color, 0.5);
+}
