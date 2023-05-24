@@ -21,7 +21,7 @@
     box-shadow: 0px -1px 0px $header-intro-shadow;
 
     @include media($tablet) {
-        background: url("../img/hero_desktop.jpg") -90px 122px no-repeat;
+        background: url("../img/hero_desktop.jpg") -90px 132px no-repeat;
         background-color: $header-intro-bg;
         margin-top: -90px;
         padding-bottom: 122px;
@@ -66,7 +66,7 @@
     @include media($tablet) {
         content: "";
         position: absolute;
-        bottom: -1px;
+        bottom: -12px;
         left: 0;
         right: 0;
         height: 24px;
@@ -76,6 +76,7 @@
 
 @media (min-width:829px) {
     .header__catalog-container::before {
+        bottom: -17px;
         height: 34px;
         background: url("../img/zigzag-fill-desktop.svg") no-repeat bottom center;
     }
@@ -94,8 +95,12 @@
 
     @include media($tablet) {
         flex-grow: 1;
-        padding-top: 24px;
-        padding-bottom: 33px;
+    }
+}
+
+.header__catalog-item:hover {
+    @include media($desktop) {
+        background-color: $header-catalog-item-hover-bg;
     }
 }
 
@@ -103,11 +108,35 @@
     background-color: $header-catalog-item-2n-bg;
 }
 
+.header__catalog-item:nth-child(2n):hover {
+    background-color: $header-catalog-item-2n-hover-bg;
+}
+
 .header__catalog-link {
     text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 24px;
+    padding-bottom: 33px;
+}
+
+.header__catalog-link:hover {
+    @include media($desktop) {
+        padding-top: 26px;
+        padding-bottom: 36px;
+        transform: translateY(-5px);
+    }
+}
+
+.header__catalog-link:hover .header__catalog-icon {
+    @include media($desktop) {
+        color: rgba($header-catalog-icon-color, 0.7);
+    }
+}
+
+.header__catalog-link:active .header__catalog-icon {
+    color: rgba($header-catalog-icon-color, 0.3);
 }
 
 .header__catalog-name {

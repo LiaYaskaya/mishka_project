@@ -5,6 +5,7 @@
         position: absolute;
         top: 0;
         left: 28px;
+        z-index: 3;
     }
 
     @include media($desktop) {
@@ -12,6 +13,16 @@
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+.logo:hover .logo__icon-desktop {
+    @include media($desktop) {
+        color: rgba($logo-color, 0.6);
+    }
+}
+
+.logo:active .logo__icon-desktop {
+    color: rgba($logo-color, 0.3);
 }
 
 .logo__icon-mobile {
@@ -48,5 +59,6 @@
 
     @include media($desktop) {
         display: block;
+        color: $logo-color;
     }
 }

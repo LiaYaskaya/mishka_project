@@ -39,6 +39,10 @@
         grid-template-columns: auto 1fr 82px auto;
         grid-template-rows: repeat(2, 90px);
     }
+
+    @include media($desktop) {
+        grid-template-columns: auto auto 1fr 82px auto;
+    }
 }
 
 .nav__item {
@@ -87,6 +91,10 @@
             -1px 0 1px $nav-shadow,
             1px 0 1px $nav-shadow;
     }
+
+    @include media($desktop) {
+        grid-column: 4/5;
+    }
 }
 
 .nav__item:nth-child(4) {
@@ -94,12 +102,34 @@
         grid-column: 4/5;
         grid-row: 1/2;
     }
+
+    @include media($desktop) {
+        grid-column: 5/6;
+    }
+}
+
+.nav__item:nth-child(5) {
+    @include media($desktop) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+}
+
+.nav__item:nth-child(6) {
+    @include media($desktop) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
 }
 
 .nav__item:last-child {
     @include media($tablet) {
         grid-column: 4/5;
         grid-row: 2/3;
+    }
+
+    @include media($desktop) {
+        grid-column: 5/6;
     }
 }
 
@@ -120,7 +150,18 @@
 
     @include media($desktop) {
         font-size: 17px;
+        padding: 32px 35px;
     }
+}
+
+.nav__link:hover {
+    @include media($desktop) {
+        color: rgba($nav-link-color, 0.6);
+    }
+}
+
+.nav__link:active {
+    color: rgba($nav-link-color, 0.3);
 }
 
 .nav__item:first-child .nav__link,
@@ -142,6 +183,18 @@
         padding-right: 0;
         padding-left: 31px;
     }
+}
+
+.nav__item:nth-child(3) .nav__link:hover .nav__item-icon,
+.nav__item:nth-child(4) .nav__link:hover .nav__item-icon {
+    @include media($desktop) {
+        color: $nav-item-icon-hover-color;
+    }
+}
+
+.nav__item:nth-child(3) .nav__link:active .nav__item-icon,
+.nav__item:nth-child(4) .nav__link:active .nav__item-icon {
+    color: rgba($nav-item-icon-hover-color, 0.3);
 }
 
 .nav__item:nth-child(5) .nav__link,
@@ -179,6 +232,7 @@
     transform: translateY(-50%);
     width: 21px;
     height: 18px;
+    color: rgba($nav-item-icon-color, 0.2);
 
     @include media($tablet) {
         position: static;
