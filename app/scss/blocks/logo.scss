@@ -15,50 +15,27 @@
     }
 }
 
-.logo:hover .logo__icon-desktop {
+.logo:hover .logo__mobile {
     @include media($desktop) {
-        color: rgba($logo-color, 0.6);
+        opacity: 0.6;
     }
 }
 
-.logo:active .logo__icon-desktop {
-    color: rgba($logo-color, 0.3);
+.logo:active .logo__mobile {
+    opacity: 0.3;
 }
 
-.logo__icon-mobile {
-    color: $logo-color;
-    display: block;
+.logo__mobile {
+    width: 86px;
+    height: 35px;
 
     @include media($tablet) {
-        display: none;
+        width: 113px;
+        height: 46px;
     }
 
     @include media($desktop) {
-        display: none;
-    }
-}
-
-.logo__icon-tablet {
-    display: none;
-
-    @include media($tablet) {
-        display: block;
-    }
-
-    @include media($desktop) {
-        display: none;
-    }
-}
-
-.logo__icon-desktop {
-    display: none;
-
-    @include media($tablet) {
-        display: none;
-    }
-
-    @include media($desktop) {
-        display: block;
-        color: $logo-color;
+        width: 149px;
+        height: 72px;
     }
 }

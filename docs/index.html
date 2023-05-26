@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mishka</title>
-    <link rel="preload" href="/app/fonts/Open_Sans/OpenSans-Regular.woff2?t=1684956296148" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/app/fonts/Open_Sans/OpenSans-Bold.woff2?t=1684956296148" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/main.css?t=1684956296148">
+    <link rel="preload" href="/app/fonts/Open_Sans/OpenSans-Regular.woff2?t=1685130863535" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/app/fonts/Open_Sans/OpenSans-Bold.woff2?t=1685130863535" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/main.css?t=1685130863535">
 </head>
 
 <body>
@@ -16,15 +16,16 @@
 
     <div class="header__top container">
         <a class="logo" href="index.html">
-            <svg class="logo__icon-mobile" width="86" height="35" aria-label="логотип мишка." role="img">
-                <use xlink:href="img/icons/sprite.svg#mishka_logo_mobile" />
-            </svg>
-            <svg class="logo__icon-tablet" width="113" height="46" aria-label="логотип мишка." role="img">
-                <use xlink:href="img/icons/sprite.svg#mishka_logo_tablet" />
-            </svg>
-            <svg class="logo__icon-desktop" width="149" height="72" aria-label="логотип мишка." role="img">
-                <use xlink:href="img/icons/sprite.svg#mishka_logo_desktop" />
-            </svg>
+            <picture class="logo__pic">
+                <source type="image/avif" media="(min-width: 1150px)" srcset="img/mishka_logo_desktop.avif" />
+                <source type="image/webp" media="(min-width: 1150px)" srcset="img/mishka_logo_desktop.webp" />
+                <source type="image/svg" media="(min-width: 1150px)" srcset="img/mishka_logo_desktop.svg" />
+                <source type="image/avif" media="(min-width: 768px)" srcset="img/mishka_logo_tablet.avif" />
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/mishka_logo_tablet.webp" />
+                <source type="image/svg" media="(min-width: 768px)" srcset="img/mishka_logo_tablet.svg" />
+                <img class="logo__mobile" src="img/mishka_logo_mobile.svg" srcset="img/mishka_logo_mobile.webp, img/mishka_logo_mobile.avif" width="86" height="35"
+                    alt="логотип мишка." />
+            </picture>
         </a>
         <nav class="js-nav nav">
             <ul class="nav__list">
@@ -72,7 +73,7 @@
         </h1>
         <div class="header__catalog-container">
             <ul class="header__catalog-list">
-                <li class="header__catalog-item container">
+                <li class="header__catalog-item">
                     <a class="header__catalog-link" href="#">
                         <p class="header__catalog-name">Предметы интерьера</p>
                         <svg class="header__catalog-icon" width="40" height="62" aria-label="Предметы интерьера"
@@ -81,7 +82,7 @@
                         </svg>
                     </a>
                 </li>
-                <li class="header__catalog-item container">
+                <li class="header__catalog-item">
                     <a class="header__catalog-link" href="#">
                         <p class="header__catalog-name">Детские игрушки</p>
                         <svg class="header__catalog-icon" width="60" height="60" aria-label="Детские игрушки"
